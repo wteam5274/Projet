@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Gouvernement Tunisien</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="main.js"></script>
+<script>
+
+	
+function getRevenue(id){
+
+	let url = 'http://demo2481139.mockable.io/revenues?fbclid=IwAR0kWBv4ngL7ATgZ4MnbF2TXLDkbxd72QEaG4-9JeefhFoHMV14eP8pZJ3g';
+	
+	fetch(url)
+  .then(function(response) { 
+  
+ return response.json();
+   
+	
+  })
+  .then(function(json) {
+
+var jsonObj = JSON.parse(JSON.stringify(json));
+
+var n=0;
+if((Object.values(jsonObj)[n])=null)
+	{alert('n existe pas');}
+var verif=false;
+while(verif===false){
+var val = Object.values(jsonObj)[n].cin ;
+	if(val === id){
+	
+	id=n
+	verif=true;
+	}
+	
+	n++;
+}
+if((Object.values(jsonObj)[n])=null)
+	{alert('n existe pas');}
+var verif=false;
+
+document.getElementById('cin').innerHTML = Object.values(jsonObj)[id].cin;
+document.getElementById('namePerson').innerHTML = Object.values(jsonObj)[id].namePerson;
+document.getElementById('description').innerHTML = Object.values(jsonObj)[id].description;
+document.getElementById('type').innerHTML = Object.values(jsonObj)[id].type;
+document.getElementById('amount').innerHTML = Object.values(jsonObj)[id].amount;
+//document.getElementById('result_json').innerHTML = JSON.stringify(json);
+  })
+}
+
+
+</script>
+</head>
+<body >
+
+<div id="wrapper">
+
+		
+	
+	<div class="icon-bar" MARgi-left-left="50px">
+	***************REPUBLIQUE TUNISIENNE ***************
+		<a href="#" class="phone">193     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">197     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">198     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">80 10 11 11     <i class="fa fa-phone" margin-left="50px"></i></a>
+		_________________
+		<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+		<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+		<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+		<a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+	</div>
+	<div id="header">
+		<div id="logo">
+			<div>
+				<img src="images/logo.png" height="110px"alt="">
+				Portail du Gouvernement Tunisien
+				<img src="images/82499400_632448747563759_7911273190217744384_n.png" height="110px"alt="">
+			</div>
+			
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="first current_page_item"><a href="accueil.html">Accueil</a></li>
+				<li><a href="financeListe.html">Ministère de finance</a></li>
+				<li><a href="interieurListe.html">Ministère d'intérieur</a></li>
+				<li><a href="municipaliteListe.html">Municipalité</a></li>
+
+			</ul>
+			<br class="clearfix" />
+			
+		</div>
+	</div>
+	<div id="page">
+		<div id="content">
+            <div class="post">
+            	<h2>Revenue en ligne</h2>
+            </div>
+			<div >
+				
+					<input class="form-text" id="idRev" name="search" size="15" maxlength="15" />
+					   
+						<button onclick="getRevenue(idRev.value)">
+Chercher
+</button>
+
+				</div>
+								
+<div>
+                        <label id="cin2" for="cin">CIN:</label>
+                        <label id="cin" for="cin"></label>
+                    </div>
+ <div>
+                        <label for="namePerson1">Nom :</label>
+                        <label id="namePerson"></label>
+                    </div>
+
+					 <div>
+                        <label for="description1">Description :</label>
+                        <label id="description"></label>
+                    </div>
+					 <div>
+                        <label for="type1">Type :</label>
+                        <label id="type"></label>
+						
+                    </div>
+					 <div>
+                        <label for="amount1">Montant :</label>
+                        <label id="amount"></label>
+                    </div>
+					 
+					<div>
+					<input type="submit" value="Envoyer" />
+					<input type="submit" value="Supprimer" />
+					
+
+                    </div>
+					</div>
+						
+					
+              
+			
+			<br class="clearfix" />
+		
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+	&copy;  All rights reserved. Design by Maissa Gobji, Daassi Sana et Najjar Bilel.
+</div>
+</body>
+</html>

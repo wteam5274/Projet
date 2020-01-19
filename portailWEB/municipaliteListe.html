@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Gouvernement Tunisien</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="main.js"></script>
+<script>
+
+	
+function getActeNaiss(){
+
+	let url = 'http://demo2481139.mockable.io/municipality?fbclid=IwAR2NZzNkYnQKkXOlbl3ZVQz7vIKes_HjUkN2dgu-ZgUcfTAjrNiR0U4QL-U';
+	fetch(url)
+  .then(function(response) { 	
+    return response.json();
+  })
+  .then(function(json) {
+  	document.getElementById('result_json').innerHTML = JSON.stringify(json);
+  })
+}
+
+
+</script>
+</head>
+<body onload="getActeNaiss()">
+
+<div id="wrapper">
+
+		
+	
+	<div class="icon-bar" MARgi-left-left="50px">
+	***************REPUBLIQUE TUNISIENNE ***************
+		<a href="#" class="phone">193     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">197     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">198     <i class="fa fa-phone" margin-left="50px"></i></a>
+		<a href="#" class="phone">80 10 11 11     <i class="fa fa-phone" margin-left="50px"></i></a>
+		_________________
+		<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+		<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+		<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+		<a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+	</div>
+	<div id="header">
+		<div id="logo">
+			<div>
+				<img src="images/logo.png" height="110px"alt="">
+				Portail du Gouvernement Tunisien
+				<img src="images/82499400_632448747563759_7911273190217744384_n.png" height="110px"alt="">
+			</div>
+			
+		</div>
+	
+		<div id="menu">
+			<ul>
+				<li class="first current_page_item"><a href="accueil.html">Accueil</a></li>
+				<li><a href="financeListe.html">Ministère de finance</a></li>
+				<li><a href="interieurListe.html">Ministère d'intérieur</a></li>
+				<li><a href="municipaliteListe.html">Municipalité</a></li>
+
+			</ul>
+			<br class="clearfix" />
+			
+		</div>
+	</div>
+	<div id="page">
+		<div id="content">
+            <div class="post">
+            	<h2>Liste des actes de naissance</h2>
+            </div>
+				<div id="search">
+		
+				<div >
+				
+					<a href="municipalite.html" id="lienMun"  style="background-color:red; color:white">Chercher</a>
+
+				</div>
+			
+			</div>
+           
+                    <div>
+                       
+		
+
+<div id="result_json">
+</div>
+                        
+                    </div>
+			 <div >	
+
+			 
+			</div>
+			<br class="clearfix" />
+		
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+	&copy;  All rights reserved. Design by Maissa Gobji, Daassi Sana et Najjar Bilel.
+</div>
+</body>
+</html>
